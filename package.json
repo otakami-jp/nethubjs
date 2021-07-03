@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "server routing",
   "main": "dist",
+  "types": "./typings",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
