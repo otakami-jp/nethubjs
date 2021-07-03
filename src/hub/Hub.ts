@@ -24,7 +24,7 @@ class Hub extends EventEmitter {
     public app: Application;
     public server?: Http2Server;
     public protocolUse?: string;
-    public port?: any[];
+    private tlsOptions?: any;
 
     constructor(options: HubOptions) {
         super();
@@ -39,7 +39,7 @@ class Hub extends EventEmitter {
 
         this.protocolUse;
 
-        this.port;
+        this.tlsOptions;
     };
 
     private get routes(): _route[] {
@@ -112,8 +112,15 @@ class Hub extends EventEmitter {
         });
     };
 
+    public addPlugin(callback: (...args: any) => void): this {
+        callback.call(this, this);
+        return this;
+    };
+
     public createServer(tlsOptions: any): Http2Server {
         this.emit('debug', 'Creating server | protocol use http/2.0');
+
+        this.tlsOptions = tlsOptions;
 
         this.server = http2.createSecureServer(tlsOptions);
 
