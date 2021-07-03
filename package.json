@@ -1,0 +1,21 @@
+{
+  "name": "nethubjs",
+  "version": "1.0.0",
+  "description": "server routing",
+  "main": "dist",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^15.12.5",
+    "express": "^4.17.1",
+    "fastify": "^3.18.1",
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
